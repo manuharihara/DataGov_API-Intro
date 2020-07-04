@@ -1,13 +1,30 @@
 ﻿@model DataGov_API_Intro.Models.Parks
 
 @{
-  ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Parks Data :</h2>
 
-@foreach (DataGov_API_Intro.Models.Park park in Model.data)
-{
-  @(park.parkCode + " " + park.fullName + " " + park.latLong)
-  <br />
-}
+<div><b>Table Format Data Displaying in ForEach</b><br /></div>
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+
+        <th>parkCode </th>
+        <th>fullName </th>
+        <th>latLong </th>
+
+    </tr>
+    @foreach (DataGov_API_Intro.Models.Park park in Model.data)
+    { 
+    <tr>
+
+        <td>@park.parkCode</td>
+        <td>@park.fullName</td>
+        <td>@park.latLong</td>
+
+
+    </tr>
+
+    }
+</table>  
